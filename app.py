@@ -19,35 +19,42 @@ def exibir_opcoes():
 
 #Function: Finalize APP
 def finalizar_app():
+  exibir_subtitulo('Finalizando APP\n')
+
+#Function: Back main menu
+def voltar_menu_principal():
+  input('Digite a telha ENTER para voltar ao MENU PRINCIPAL ')
+  main()
+
+#Function: 
+def exibir_subtitulo(texto):
   os.system('cls')
-  print('Finalizando APP\n')
+  print(texto)
 
 #Function: Invalid option
 def opcao_invalida():
   print('Opção Inválida!\n')
-  input('Digite a telha ENTER para voltar ao MENU PRINCIPAL ')
-  main()
+
+  voltar_menu_principal()
 
 #Function: Register restaurant 
 def cadastrar_novo_restaurante():
-  os.system('cls')
-  print('Cadastro de Novos Restaurantes\n')
+  exibir_subtitulo('Cadastro de Novos Restaurantes\n')
+
   nome_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
   restaurantes.append(nome_restaurante)
   print(f'Restaurante {nome_restaurante} cadastrado com sucesso!\n')
-  input('Digite a telha ENTER para voltar ao MENU PRINCIPAL ')
-  main()
+
+  voltar_menu_principal()
 
 #Function: List restaurants
 def listar_restaurantes():
-  os.system('cls')
-  print('Restaurantes Cadastrados:\n')
+  exibir_subtitulo('Restaurantes Cadastrados:\n')
 
   for restaurante in restaurantes:
     print(f'- {restaurante}\n')
 
-  input('Digite a telha ENTER para voltar ao MENU PRINCIPAL ')
-  main()
+  voltar_menu_principal()
 
 #Function: Choice option
 def escolher_opcoes():
