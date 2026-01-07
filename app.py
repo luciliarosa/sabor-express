@@ -1,7 +1,7 @@
 import os
 
 #Criating List
-restaurantes = []
+restaurantes = ['Outback', 'Segunda Casa', 'Yosugiro']
 
 #Function: Show APP name
 def exibir_nome_do_programa():
@@ -38,6 +38,17 @@ def cadastrar_novo_restaurante():
   input('Digite a telha ENTER para voltar ao MENU PRINCIPAL ')
   main()
 
+#Function: List restaurants
+def listar_restaurantes():
+  os.system('cls')
+  print('Restaurantes Cadastrados:\n')
+
+  for restaurante in restaurantes:
+    print(f'- {restaurante}\n')
+
+  input('Digite a telha ENTER para voltar ao MENU PRINCIPAL ')
+  main()
+
 #Function: Choice option
 def escolher_opcoes():
   try:
@@ -45,7 +56,7 @@ def escolher_opcoes():
     if opcao_escolhida == 1:
       cadastrar_novo_restaurante()
     elif opcao_escolhida == 2:
-      print('Listar restaurantes')
+      listar_restaurantes()
     elif opcao_escolhida == 3:
       print('Ativar restaurantes')
     elif opcao_escolhida == 4:
