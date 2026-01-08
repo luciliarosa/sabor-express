@@ -1,7 +1,11 @@
 import os
 
 #Criating List
-restaurantes = ['Outback', 'Segunda Casa', 'Yosugiro']
+restaurantes = [
+  {'nome':'Outback', 'categoria':'Comida Australiana', 'ativo': True}, 
+  {'nome':'Segunda Casa','categoria':'Lanches', 'ativo': True}, 
+  {'nome':'Yosugiro','categoria':'Comida Japonesa', 'ativo': False}
+]
 
 #Function: Show APP name
 def exibir_nome_do_programa():
@@ -23,7 +27,7 @@ def finalizar_app():
 
 #Function: Back main menu
 def voltar_menu_principal():
-  input('Digite a telha ENTER para voltar ao MENU PRINCIPAL ')
+  input('\nDigite a telha ENTER para voltar ao MENU PRINCIPAL ')
   main()
 
 #Function: 
@@ -52,7 +56,10 @@ def listar_restaurantes():
   exibir_subtitulo('Restaurantes Cadastrados:\n')
 
   for restaurante in restaurantes:
-    print(f'- {restaurante}\n')
+    nome_restaurante = restaurante['nome']
+    categoria = restaurante['categoria']
+    ativo = restaurante['ativo']
+    print(f'- {nome_restaurante} | {categoria} | {ativo}')
 
   voltar_menu_principal()
 
